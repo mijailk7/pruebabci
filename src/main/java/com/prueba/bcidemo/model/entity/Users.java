@@ -42,11 +42,12 @@ public class Users {
     @JoinColumn(name="users_id")
     public List<Phones> phones = new ArrayList<>();
 
-    public Users(String user_id, String name, String email, String password) {
+    public Users(String user_id, String name, String email, String password, String token) {
         this.users_id = user_id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.isactive = "1";
+        this.token = token;
     }
 }

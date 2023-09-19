@@ -19,6 +19,7 @@ public class UserRequest {
     @JsonProperty("password")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public String password;
+    public String token;
     @JsonProperty("phones")
     public List<PhoneRequest> phones;
 

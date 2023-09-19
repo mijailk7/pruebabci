@@ -3,14 +3,21 @@ package com.prueba.bcidemo.util;
 import com.prueba.bcidemo.model.entity.Phones;
 import com.prueba.bcidemo.model.entity.Users;
 import com.prueba.bcidemo.model.request.UserRequest;
+import com.prueba.bcidemo.security.TokenUtil;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DataAdapter {
 
+    @Autowired
+    TokenUtil tokenUtil;
     public void convertUserReqToData(UserRequest userRequest, List<Users> users){
-        Users objUser = new Users(UUID.randomUUID().toString(),userRequest.getName(),userRequest.getEmail(),
-            userRequest.password);
+        String userId = UUID.randomUUID().toString();
+        Users objUser = new Users(userId,userRequest.getName(),userRequest.getEmail(),
+            userRequest.password,tokenUtil.createToken(userRequest.getName(),userId));
 
         if(validateData(userRequest)){
             userRequest.phones.stream().forEach(p -> {
