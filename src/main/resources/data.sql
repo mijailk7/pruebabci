@@ -1,0 +1,2 @@
+insert into users(users_unique_id,name,email,password,created,isactive)
+values('82a597c3-fd91-4d12-9a9f-0d307f465d6c','Juan Rodriguez','juan@rodriguez.org','$2a$10$5ykbITDApgNq47IDcmOQ..wibw3LLVASp1AO6TIawzaz.qFB76VoS',CURRENT_TIMESTAMP(),'1');

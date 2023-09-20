@@ -13,13 +13,14 @@ import lombok.Setter;
 public class UserRequest {
 
     @JsonProperty("name")
-    public String name;
+    private String name;
     @JsonProperty("email")
-    public String email;
+    private String email;
     @JsonProperty("password")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String password;
-    public String token;
+    private String password;
+    private String token;
+    private String username;
     @JsonProperty("phones")
     public List<PhoneRequest> phones;
 

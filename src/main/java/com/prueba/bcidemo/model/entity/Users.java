@@ -25,7 +25,7 @@ public class Users {
     @Id
     private Long id;
     @Column(name = "users_unique_id")
-    private String users_id;
+    private String username;
     private String name;
     private String email;
     private String password;
@@ -42,12 +42,12 @@ public class Users {
     @JoinColumn(name="users_id")
     public List<Phones> phones = new ArrayList<>();
 
-    public Users(String user_id, String name, String email, String password, String token) {
-        this.users_id = user_id;
+    public Users(){}
+    public Users(String user_id, String name, String email, String password) {
+        this.username = user_id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.isactive = "1";
-        this.token = token;
     }
 }
